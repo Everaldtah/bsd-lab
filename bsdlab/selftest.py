@@ -46,6 +46,29 @@ CURVES = [
      '0.051111408239968840235886099757', '5.98691729246391914767010400?', 1),
     ('37b1',  [0, 1, 1, -23, -50],    37,   {37: 3},       3,  0, +1,
      '1', None, 1),
+    # j = 0 (c4 = 0) rows: regression coverage for the minimal-model fix.
+    # These used to raise inside _lkc_scaling -- v_p(0) = inf, and inf // n is
+    # NaN in CPython, so the scaling-exponent search died before a minimal
+    # model existed.  Conductor and Tamagawa numbers are the oracle's (rows of
+    # data/lmfdb_oracle.json, which IS the minimal model), Sha is the LMFDB
+    # analytic value; rank 0 forces w = +1 and regulator 1.  Labels are
+    # Cremona-style, with the LMFDB label noted where the two labellings
+    # disagree (they order curves within an isogeny class differently -- cf.
+    # the 32a3 row above).
+    # y^2 + y = x^3: the CM curve with j = 0.  LMFDB 27.a4; c_3 = 1 because
+    # the minimal discriminant -27 has v_3 = 3 (additive, so no ODD constraint).
+    ('27a1',  [0, 0, 1, 0, 0],       27,   {3: 1},        3,  0, +1,
+     '1', None, 1),
+    # y^2 = x^3 + 1.  LMFDB 36.a4.
+    ('36a1',  [0, 0, 0, 0, 1],       36,   {2: 3, 3: 2},   6,  0, +1,
+     '1', None, 1),
+    # y^2 = x^3 - 1.  LMFDB 144.a3.
+    ('144a1', [0, 0, 0, 0, -1],      144,  {2: 1, 3: 2},   2,  0, +1,
+     '1', None, 1),
+    # LMFDB 243.b2: an a3 = 1 j = 0 curve (y^2 + y = x^3 + 2), checking that
+    # the fix does not silently force the b-form y^2 = x^3 + b.
+    ('243b1', [0, 0, 1, 0, 2],       243,  {3: 3},        3,  0, +1,
+     '1', None, 1),
     ('389a1', [0, 1, 1, -2, 0],       389,  {389: 1},      1,  2, +1,
      '0.15246017794314375162432475705', '4.98042512173897283?', 1),
     ('5077a1', [0, 0, 1, -7, 6],      5077, {5077: 1},     1,  3, -1,

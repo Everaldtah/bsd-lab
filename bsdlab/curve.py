@@ -374,6 +374,11 @@ def _lkc_scaling(c4: int, c6: int) -> int:
     valuations and then *verify by construction*, decreasing the exponent until
     ``_curve_from_c_invariants`` actually returns an integral curve with
     precisely these c-invariants. The construction is the criterion.
+
+    A zero c-invariant (c4 = 0 for j = 0, c6 = 0 for j = 1728) imposes no
+    bound of its own: its p-adic valuation is infinite, so it is simply left
+    out of the minimum rather than fed through ``float('inf') // n``, which is
+    NaN and used to poison the whole computation.
     """
     if c4 == 0 and c6 == 0:
         return 1
@@ -383,9 +388,14 @@ def _lkc_scaling(c4: int, c6: int) -> int:
     u = 1
     primes = set(factorint(abs(disc)).keys())
     for p in sorted(primes):
-        k = int(min(_valuation(c4, p) // 4,
-                    _valuation(c6, p) // 6,
-                    _valuation(disc, p) // 12))
+        # disc != 0 above, so its valuation is a finite integer; zero c4/c6
+        # contribute no cap (infinite valuation) instead of a NaN.
+        caps = [_valuation(disc, p) // 12]
+        if c4:
+            caps.append(_valuation(c4, p) // 4)
+        if c6:
+            caps.append(_valuation(c6, p) // 6)
+        k = min(caps)
         while k > 0:
             if _curve_from_c_invariants(c4 // p ** (4 * k),
                                         c6 // p ** (6 * k)) is not None:
