@@ -317,19 +317,19 @@ class EllipticCurve:
         # Y = 2y + a1 x + a3, so torsion has Y integral and Y^2 | 16*disc.
         bound = 16 * abs(disc)
         for Y in _square_divisor_candidates(bound):
-            for x in _integer_roots_of(
-                    [4, b2, 2 * b4, b6 - Y * Y]):
-                y2 = Fraction(Y - E.a1 * x - E.a3, 2)
-                if y2.denominator != 1:
-                    continue
-                P = (Fraction(x), Fraction(int(y2)))
+            # The 2-torsion x may have denominator 2 or 4 even on a minimal
+            # model (e.g. 15a1 has a 2-torsion point at x = -13/4), so integer
+            # roots alone are not enough.
+            for x in _rational_roots_of([4, b2, 2 * b4, b6 - Y * Y]):
+                y = Fraction(Y - E.a1 * x - E.a3, 2)
+                P = (x, y)
                 if E.is_on_curve(P) and P not in pts:
                     if _has_finite_order(E, P, 16):
                         pts.append(P)
                         Q = E.negate(P)
                         if Q not in pts:
                             pts.append(Q)
-        return pts
+        return _close_under_addition(E, pts)
 
     def torsion_order(self) -> int:
         return len(self.torsion_points())
@@ -471,6 +471,38 @@ def _integer_roots_of(coeffs: list) -> list:
     for r in p.ground_roots():
         if r.is_Integer:
             out.append(int(r))
+    return out
+
+
+def _rational_roots_of(coeffs: list) -> list:
+    """Rational roots as Fractions. Denominators divide the leading coefficient."""
+    if all(c == 0 for c in coeffs):
+        return []
+    lead, n = coeffs[0], len(coeffs) - 1
+    out = []
+    for q in range(1, abs(lead) + 1):
+        if lead % q:
+            continue
+        scaled = [c * q ** i for i, c in enumerate(coeffs)]
+        for m in _integer_roots_of(scaled):
+            r = Fraction(m, q)
+            if r not in out:
+                out.append(r)
+    return out
+
+
+def _close_under_addition(E: EllipticCurve, pts: list) -> list:
+    """Saturate a set of torsion points under the group law (|E_tors| <= 16)."""
+    out = list(pts)
+    changed = True
+    while changed and len(out) <= 16:
+        changed = False
+        for P in list(out):
+            for Q in list(out):
+                R = E.add(P, Q)
+                if R not in out:
+                    out.append(R)
+                    changed = True
     return out
 
 

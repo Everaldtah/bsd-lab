@@ -1,0 +1,425 @@
+[
+ {
+  "Clabel": "11a1",
+  "lmfdb_label": "11.a2",
+  "ainvs": [
+   0,
+   -1,
+   1,
+   -10,
+   -20
+  ],
+  "conductor": 11,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": "1.26920930427955342602495318",
+  "torsion": 5,
+  "tamagawa": {
+   "11": 5
+  },
+  "tamagawa_product": 5,
+  "bad_primes": [
+   11
+  ],
+  "jinv": [
+   -122023936,
+   161051
+  ],
+  "signD": -1
+ },
+ {
+  "Clabel": "11a2",
+  "lmfdb_label": null,
+  "ainvs": [
+   0,
+   -1,
+   1,
+   -7820,
+   -263580
+  ],
+  "conductor": 11,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": null,
+  "torsion": 1,
+  "tamagawa": {
+   "11": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   11
+  ],
+  "jinv": [
+   -52893159101157376,
+   11
+  ],
+  "signD": -1
+ },
+ {
+  "Clabel": "11a3",
+  "lmfdb_label": "11.a3",
+  "ainvs": [
+   0,
+   -1,
+   1,
+   0,
+   0
+  ],
+  "conductor": 11,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": null,
+  "torsion": 5,
+  "tamagawa": {
+   "11": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   11
+  ],
+  "jinv": [
+   -4096,
+   11
+  ],
+  "signD": -1
+ },
+ {
+  "Clabel": "14a1",
+  "lmfdb_label": null,
+  "ainvs": [
+   1,
+   0,
+   1,
+   4,
+   -6
+  ],
+  "conductor": 14,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": null,
+  "torsion": 6,
+  "tamagawa": {
+   "2": 2,
+   "7": 3
+  },
+  "tamagawa_product": 6,
+  "bad_primes": [
+   2,
+   7
+  ],
+  "jinv": [
+   9938375,
+   21952
+  ],
+  "signD": -1
+ },
+ {
+  "Clabel": "15a1",
+  "lmfdb_label": "15.a5",
+  "ainvs": [
+   1,
+   1,
+   1,
+   -10,
+   -10
+  ],
+  "conductor": 15,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": null,
+  "torsion": 8,
+  "tamagawa": {
+   "3": 2,
+   "5": 4
+  },
+  "tamagawa_product": 8,
+  "bad_primes": [
+   3,
+   5
+  ],
+  "jinv": [
+   111284641,
+   50625
+  ],
+  "signD": 1
+ },
+ {
+  "Clabel": "32a3",
+  "lmfdb_label": "32.a1",
+  "ainvs": [
+   0,
+   0,
+   0,
+   -11,
+   -14
+  ],
+  "conductor": 32,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": null,
+  "torsion": 2,
+  "tamagawa": {
+   "2": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   2
+  ],
+  "jinv": [
+   287496,
+   1
+  ],
+  "signD": 1
+ },
+ {
+  "Clabel": "37a1",
+  "lmfdb_label": "37.a1",
+  "ainvs": [
+   0,
+   0,
+   1,
+   -1,
+   0
+  ],
+  "conductor": 37,
+  "rank": 1,
+  "analytic_rank": 1,
+  "sha": 1,
+  "regulator": "0.051111408239968840235886099757",
+  "real_period": "5.98691729246391914767010400",
+  "torsion": 1,
+  "tamagawa": {
+   "37": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   37
+  ],
+  "jinv": [
+   110592,
+   37
+  ],
+  "signD": 1
+ },
+ {
+  "Clabel": "37b1",
+  "lmfdb_label": null,
+  "ainvs": [
+   0,
+   1,
+   1,
+   -23,
+   -50
+  ],
+  "conductor": 37,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 1,
+  "regulator": "1",
+  "real_period": null,
+  "torsion": 3,
+  "tamagawa": {
+   "37": 3
+  },
+  "tamagawa_product": 3,
+  "bad_primes": [
+   37
+  ],
+  "jinv": [
+   1404928000,
+   50653
+  ],
+  "signD": 1
+ },
+ {
+  "Clabel": "389a1",
+  "lmfdb_label": "389.a1",
+  "ainvs": [
+   0,
+   1,
+   1,
+   -2,
+   0
+  ],
+  "conductor": 389,
+  "rank": 2,
+  "analytic_rank": 2,
+  "sha": 1,
+  "regulator": "0.15246017794314375162432475705",
+  "real_period": "4.98042512173897283",
+  "torsion": 1,
+  "tamagawa": {
+   "389": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   389
+  ],
+  "jinv": [
+   1404928,
+   389
+  ],
+  "signD": 1
+ },
+ {
+  "Clabel": "571a1",
+  "lmfdb_label": "571.b1",
+  "ainvs": [
+   0,
+   -1,
+   1,
+   -929,
+   -10595
+  ],
+  "conductor": 571,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 4,
+  "regulator": "1",
+  "real_period": "0.43234125627186097023531760110",
+  "torsion": 1,
+  "tamagawa": {
+   "571": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   571
+  ],
+  "jinv": [
+   -88764284403712,
+   571
+  ],
+  "signD": -1
+ },
+ {
+  "Clabel": "571b1",
+  "ainvs": [
+   0,
+   1,
+   1,
+   -4,
+   2
+  ],
+  "analytic_rank": 2,
+  "bad_primes": [
+   571
+  ],
+  "cm": 0,
+  "conductor": 571,
+  "jinv": [
+   -8998912,
+   571
+  ],
+  "lmfdb_label": "571.a1",
+  "num_int_pts": 16,
+  "rank": 2,
+  "regulator": "0.17725314026200493174409109973",
+  "sha": 1,
+  "signD": -1,
+  "torsion": 1,
+  "torsion_structure": []
+ },
+ {
+  "Clabel": "681a1",
+  "ainvs": [
+   0,
+   -1,
+   1,
+   -13,
+   24
+  ],
+  "analytic_rank": 1,
+  "bad_primes": [
+   3,
+   227
+  ],
+  "cm": 0,
+  "conductor": 681,
+  "jinv": [
+   -262144000,
+   18387
+  ],
+  "lmfdb_label": "681.b1",
+  "num_int_pts": 4,
+  "rank": 1,
+  "regulator": "0.22516890662066525665265862320",
+  "sha": 1,
+  "signD": -1,
+  "torsion": 1,
+  "torsion_structure": []
+ },
+ {
+  "Clabel": "681b1",
+  "lmfdb_label": "681.e2",
+  "ainvs": [
+   1,
+   1,
+   0,
+   -1154,
+   -15345
+  ],
+  "conductor": 681,
+  "rank": 0,
+  "analytic_rank": 0,
+  "sha": 9,
+  "regulator": "1",
+  "real_period": "0.81991786938969809641267899074",
+  "torsion": 4,
+  "tamagawa": {
+   "3": 2,
+   "227": 2
+  },
+  "tamagawa_product": 4,
+  "bad_primes": [
+   3,
+   227
+  ],
+  "jinv": [
+   170188039196713,
+   3042735921
+  ],
+  "signD": 1
+ },
+ {
+  "Clabel": "5077a1",
+  "lmfdb_label": "5077.a1",
+  "ainvs": [
+   0,
+   0,
+   1,
+   -7,
+   6
+  ],
+  "conductor": 5077,
+  "rank": 3,
+  "analytic_rank": 3,
+  "sha": 1,
+  "regulator": "0.41714355875838396981711954462",
+  "real_period": "4.15168798308693305",
+  "torsion": 1,
+  "tamagawa": {
+   "5077": 1
+  },
+  "tamagawa_product": 1,
+  "bad_primes": [
+   5077
+  ],
+  "jinv": [
+   37933056,
+   5077
+  ],
+  "signD": 1
+ }
+]

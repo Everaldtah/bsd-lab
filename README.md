@@ -60,15 +60,19 @@ boundary is a list of concrete statements, not a vibe.
 
 ## Status
 
-Active build. See `docs/FINDINGS.md` for results as they land and
-`docs/METHODOLOGY.md` for how each number is computed and how far it is trusted.
+Working pipeline. The 12-curve self-test passes (100 checks, 0 failures) and the
+batch run reproduces rank and #Sha for all 14 reference curves, conductors
+11-5077, including both nontrivial-Sha cases (571a1 #Sha = 4, 681b1 #Sha = 9).
+See `docs/FINDINGS.md` for the results and `docs/METHODOLOGY.md` for how each
+number is computed and how far it is trusted.
 
 ## Reproducing
 
 ```bash
 pip install sympy mpmath numpy
 python -m bsdlab.selftest        # verifies the library against known curves
-python -m bsdlab.run --help      # the experiment drivers
+python run.py --help             # batch driver -> data/results.json
+python run.py --prec 60          # reproduces docs/FINDINGS.md
 ```
 
 Every dataset in `data/` is regenerable from a single command recorded in its header.
