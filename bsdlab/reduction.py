@@ -335,7 +335,7 @@ def _star_types(C: EllipticCurve, p: int, v: int) -> tuple:
                 if p == 2:
                     t = my * _proot(a6t, 2, p)
                 else:
-                    t = my * (-a3t * _inv_mod(2, p)) % p
+                    t = my * ((-a3t * _inv_mod(2, p)) % p)
                 C = C.transform(1, 0, 0, t)
                 a1, a2, a3, a4, a6 = C.ainvs
                 my *= p
@@ -345,7 +345,7 @@ def _star_types(C: EllipticCurve, p: int, v: int) -> tuple:
                     if p == 2:
                         r = mx * _proot(a6t * _inv_mod(a2t, p), 2, p)
                     else:
-                        r = mx * (-a4t * _inv_mod(2 * a2t % p, p)) % p
+                        r = mx * ((-a4t * _inv_mod(2 * a2t % p, p)) % p)
                     C = C.transform(1, r, 0, 0)
                     a1, a2, a3, a4, a6 = C.ainvs
                     mx *= p
@@ -378,7 +378,7 @@ def _star_types(C: EllipticCurve, p: int, v: int) -> tuple:
     if p == 2:
         t = -p2 * _proot(a6t, 2, p)
     else:
-        t = p2 * (-a3t * _inv_mod(2, p)) % p
+        t = p2 * ((-a3t * _inv_mod(2, p)) % p)
     C = C.transform(1, 0, 0, t)
     a1, a2, a3, a4, a6 = C.ainvs
     if a4 % p4:

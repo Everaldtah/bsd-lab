@@ -69,6 +69,14 @@ CURVES = [
     # the fix does not silently force the b-form y^2 = x^3 + b.
     ('243b1', [0, 0, 1, 0, 2],       243,  {3: 3},        3,  0, +1,
      '1', None, 1),
+    # LMFDB 99.c2: regression coverage for the Tate's-algorithm fix.  The
+    # IV*->III* y-shift (and both In* blow-up shifts) were computed as
+    # p^2 * residue % p, which is 0 always, so the shift was a silent no-op
+    # and every p >= 3 curve past the IV* test fell through to II*.  This
+    # curve needs the working shift: v_3(disc) = 9 with type III*, f = 2,
+    # c_3 = 2 (Ogg: 9 - 8 + 1 = 2).
+    ('99c2',  [1, -1, 0, -15, 8],     99,   {3: 2, 11: 1}, 2,  0, +1,
+     '1', None, 1),
     ('389a1', [0, 1, 1, -2, 0],       389,  {389: 1},      1,  2, +1,
      '0.15246017794314375162432475705', '4.98042512173897283?', 1),
     ('5077a1', [0, 0, 1, -7, 6],      5077, {5077: 1},     1,  3, -1,
