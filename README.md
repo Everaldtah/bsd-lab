@@ -53,10 +53,12 @@ provenance and the numerical certainty of every quantity in it. Headline runs:
   Cassels' pairing forces a perfect square; deviation from a square is a hard error
   signal that something upstream miscomputed.
 
-**3. `docs/` — the gap map.** What the Gross–Zagier / Kolyvagin machinery actually
-buys (rank ≤ 1, and only then), what Skinner–Urban and the p-converse theorems
-added, and precisely where rank ≥ 2 breaks every known method. Written so the open
-boundary is a list of concrete statements, not a vibe.
+**3. `docs/` — the gap map.** [`BARRIER.md`](docs/BARRIER.md): what the
+Gross–Zagier / Kolyvagin machinery actually buys (analytic rank ≤ 1, and only
+then), what Kato and Skinner–Urban added and under which hypotheses, and precisely
+where rank ≥ 2 breaks every known method — including why the computational barrier
+and the theoretical one are the same barrier. Written so the open boundary is a
+list of concrete statements, not a vibe.
 
 ## Status
 

@@ -71,7 +71,9 @@ period, regulator, Tamagawa product and L-value to all be individually right.
 - **Rank >= 2 results are conditional.** Gross-Zagier and Kolyvagin certify rank
   and the finiteness of Sha only for analytic rank 0 or 1. For 389a1, 571b1 and
   5077a1, `rank_certified` is False and the reported #Sha is conditional on both
-  strong BSD and on the algebraic rank equalling the analytic rank.
+  strong BSD and on the algebraic rank equalling the analytic rank. That second
+  condition is not a formality — it is rank >= 2 BSD itself. See
+  [`BARRIER.md`](BARRIER.md) for why every known method stops where it does.
 - **#Sha_an is a prediction, not a computation of Sha.** Nothing here computes
   the Tate-Shafarevich group. The integrality and square checks detect internal
   inconsistency; they do not verify BSD.
