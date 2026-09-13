@@ -219,3 +219,32 @@ This is experiment **E1** in [`EXPERIMENTS.md`](EXPERIMENTS.md). Compute
   certified `p`-adic precision. That would also refute `p`-adic BSD, which
   makes it unlikely, but the lab's independence from the Sage/PARI lineage is
   exactly what makes the check worth running.
+
+### 8.1 Correction (2026-09-13, orchestrator literature check)
+
+This experiment has largely been run already. Stein–Wuthrich, *Algorithms
+for the arithmetic of elliptic curves using Iwasawa theory*, Math. Comp. 82
+(2013) 1757–1792, **Theorem 12.3**: for `389a1` and all 5,005 good ordinary
+`p < 48,859` except `p = 16,231`, `Sha(E/Q)[p] = 0`, and the `p`-adic BSD
+conjectural order of `Sha` is `≡ 1 (mod p)`. In our notation that is
+`𝔅_p ≡ 1 mod p` at those primes. **Theorem 1.1** gives the same for
+1,534,422 pairs `(E, p)`: rank ≥ 2, conductor ≤ 30,000, `5 ≤ p < 1000`.
+Remark 12.4: at `p = 16,231`, `ord_p Reg_p = 3`, not 2.
+
+Consequences, stated plainly:
+
+1. E1 at `p < 200` **cannot be a historic first**. It is an independent
+   reproduction of known numerics by non-Sage code. That still has value:
+   it validates our p-adic machinery against a published external oracle.
+   A mismatch would almost certainly mean a bug in our code, not a
+   counterexample to p-adic BSD.
+2. **No finite computation tests GRS's new content.** GRS adds uniformity
+   in `p` to p-adic BSD, and a table over finitely many primes is consistent
+   with GRS true or false. So E1 can only ever kill GRS through a
+   p-adic-BSD failure, which Stein–Wuthrich's data make very unlikely.
+3. The normalisation to use (Balakrishnan–Müller–Stein, Math. Comp. 85
+   (2016), §1): `T = κ(γ)^{s-1} − 1` and `Reg_γ = Reg_p / (log_p κ(γ))^r`.
+   The leading `T`-coefficient is compared with `E_p · Reg_γ · #Sha ·
+   ∏c_v / |tors|²`.
+4. `p = 16,231` for `389a1` is a free extra anchor: the pipeline must find
+   `ord_p Reg_p = 3` there, if it can reach that prime.

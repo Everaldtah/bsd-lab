@@ -98,6 +98,13 @@ such as `389a1`. It needs no new point constructions, because the generators
 of `389a1` are known. The only missing ingredient is uniformity in `p`, which
 is exactly Note 1's target.
 
+> **Correction (2026-09-13).** Node C is a *conjecture*, not a computation.
+> Computing `𝔅_p` at finitely many primes (experiment E1) cannot establish
+> it. Stein–Wuthrich (Math. Comp. 2013, Thm 12.3) already verified
+> `𝔅_p ≡ 1 mod p` for `389a1` at 5,005 ordinary primes below 48,859. The
+> "historic first" would need a **proof** of C (e.g. via Note 2), and no
+> experiment in this repo can supply one. See Note 1 §8.1.
+
 ## 5. Literature check performed
 
 Searches on 2026-09-13 covered: generalised Kato classes in rank 2; the
