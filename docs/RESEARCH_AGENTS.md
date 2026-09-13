@@ -110,6 +110,29 @@ with what acceptance. Started 2026-09-13.
   Kedlaya Frobenius + E2, gated by charpoly = x² − a_p x + p and the Serre
   congruence E_{p+1} ≡ E_2 mod p) and W4p1b (heights). Wave W4p1a + W4p2
   dispatched to GLM-5.2.
+- 2026-09-13 — **W4p2 landed: exact modular symbols (`bsdlab/modsym.py`)**,
+  after an orchestrator fix. The worker passed all 16 anchor values exactly
+  (Merel Heilbronn matrices; T_l verified by exact rational asserts). But an
+  **out-of-sample gate** (`tests_research/oos_modsym.py`: modsym vs 40-digit
+  numeric L(E_d,1)/Ω(E_d) on twists of 11a1/37a1/389a1 the worker never saw)
+  found **10/60 wrong by factors of 2 or 4**. Cause: the normaliser C had been
+  fitted to the anchors, but the Hecke eigenvector's scale is arbitrary per
+  curve *and* sign. Fix: `period_scales` fixes the scale once per
+  (curve, sign) against E's own Ω⁺ (least real period) / Ω⁻ (least imaginary
+  period), and `algebraic_twisted_l` returns exact L(E,χ_d,1)·√|d|/Ω^±. The
+  twist's own-period value multiplies by a lattice index in {1/2, 1, 2}
+  (identified to 1e-12). Result: **68/68** (≈62 independent of the
+  calibration twists), anchors 16/16. Lesson for every future worker task:
+  a constant pinned to anchors must be validated off-anchor.
+- 2026-09-13 — **W4p1a attempt 1 died on the 8192 output cap** after delivering
+  `bsdlab/padic.py` (A1 passes: ring identities mod p^20, Hensel sqrt,
+  log∘exp). Resumed for Frobenius/E2 only.
+- 2026-09-13 — **W4p3 spec rewritten (orchestrator).** v1 had the MTT measure
+  wrong (α⁻ⁿλ·C_p instead of the p-stabilised α⁻ⁿ[a/pⁿ]⁺ − α⁻⁽ⁿ⁺¹⁾[a/pⁿ⁻¹]⁺),
+  demanded L_p''(0) be a unit (p-adic BSD only predicts nonzero), and dropped
+  the Euler factor (1−1/α)² from the interpolation check. v2 follows
+  Stein–Wuthrich 2013 §3 and gates on theorems: distribution relation,
+  trivial- and quadratic-character interpolation.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
   cap (third attempt produced 276 of ~280 lines before dying); two-failure
   rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:
