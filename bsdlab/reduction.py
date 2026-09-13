@@ -269,8 +269,23 @@ def _tate_step(A: list, p: int) -> tuple:
         # by 9, while a3 reduced mod 3 would leave a3' only divisible by 3.
         s, t = a1, a3
     else:
-        inv2 = _inv_mod(2, p)
-        s, t = (-a1 * inv2) % p, (-a3 * inv2) % p
+        # p >= 5: the (s, t) mod-p shift used before only worked when the
+        # residual cubic had its root at the origin, and crashed on general
+        # models (e.g. quadratic twists with p | d, p not dividing N --
+        # 389a1 twisted by d = 5, -7, 13, ...).  Instead switch to the GLOBAL
+        # short model y^2 = x^3 + A x + B with A = -27 c4, B = -54 c6
+        # (u = 1/6 is a Q-isomorphism; v_p is unchanged for p >= 5).  Being
+        # here means v(A) >= 2 and v(B) >= 3 (II/III/IV returned earlier:
+        # v(B) = 1, v(A) = 1, v(B) = 2 respectively), so a1 = a2 = a3 = 0,
+        # p^2 | a4, p^3 | a6 hold BY CONSTRUCTION and _star_types applies.
+        A_short = -27 * C.c4
+        B_short = -54 * C.c6
+        if A_short % (p * p) or B_short % (p ** 3):
+            raise ArithmeticError(
+                "p=%d short model %d x + %d fails the star divisibility" %
+                (p, A_short, B_short))
+        S = EllipticCurve.from_list([0, 0, 0, A_short, B_short])
+        return _star_types(S, p, v)
     C = C.transform(1, 0, s, t)
     a1, a2, a3, a4, a6 = C.ainvs
     for name, ai, e in (("a1", a1, 1), ("a2", a2, 1), ("a3", a3, 2),

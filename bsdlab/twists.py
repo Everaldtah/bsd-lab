@@ -76,7 +76,16 @@ def twist(E: EllipticCurve, d: int) -> EllipticCurve:
     """The quadratic twist E_d as a bsdlab EllipticCurve (nonminimal model).
 
     y^2 = x^3 + A x^2 + B x + C  ->  y^2 = x^3 + A d x^2 + B d^2 x + C d^3.
+
+    The d-scaling is only valid on an a1 = a3 = 0 model, so E is first put
+    through a13_zero_model (which self-checks j).  Feeding a general model
+    straight in was the 2026-09-13 bug: the result was not a twist of E at
+    all (constant wrong j, e.g. 21952/9 instead of 1404928/389 for 389a1).
     """
-    A, B, C = E.a2, E.a4, E.a6
-    return EllipticCurve.from_list(
+    M = a13_zero_model(E)
+    A, B, C = M.a2, M.a4, M.a6
+    out = EllipticCurve.from_list(
         [0, A * d, 0, B * d * d, C * d * d * d])
+    if out.j_invariant != E.j_invariant:
+        raise ArithmeticError("twist changed j for E=%r d=%d" % (E, d))
+    return out
