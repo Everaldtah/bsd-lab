@@ -72,3 +72,11 @@ with what acceptance. Started 2026-09-13.
 ## 4. Log
 
 - 2026-09-13 — campaign opened. W1a + W1b dispatched to GLM-5.2 workers.
+- 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
+  cap (third attempt produced 276 of ~280 lines before dying); two-failure
+  rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:
+  32a rank certified 0; n=5 and n=7 rank certified 1 (algebraic rank now
+  independent of L); 14a1/15a1/681b1 honest two-sided bounds. Selftest
+  140/0. Frontier curves 389a1/571b1/5077a1 have no rational 2-torsion —
+  2-isogeny descent does not apply to them (honest None); general
+  2-descent remains future work. W2a dispatched into the freed slot.
