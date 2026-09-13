@@ -91,6 +91,25 @@ with what acceptance. Started 2026-09-13.
   modular symbols) → W4p3 (MTT p-adic L). E4 driver
   (`scratch/e4_beta_table.py`) written against the W4 specs — the
   𝔅_p = L_p^(r)/(r!·E_p·Reg_p) table testing GRS 𝔅_p = 1.
+- 2026-09-13 — **W2b landed** (`bsdlab/rootnumbers.py`; GLM-5.2 hit quota,
+  finished on fallback). Orchestrator verification: 32a3 table route = +1 =
+  numeric route; 14 reference curves → 13 two-route agreements, 1 honestly
+  blank (undecoded additive p=2 row → `P2_TABLE_MISSING`, no guess), 0
+  disagreements. Selftest 140/0. Not yet wired into `lseries` — the census
+  keeps the numeric fallback.
+- 2026-09-13 — **W3b landed** (`docs/ROUTE_B_DARMON.md`). Recommends
+  K = Q(√21) (backups √33, √57), p = 389 inert, rigid p-adic (Bertolini–
+  Darmon/Mok) setting. Key honest finding: **no Gross–Zagier-type complex
+  height formula exists for Stark–Heegner points**; the rank-2 test (K2) is
+  our own unverified extension, worker-estimated 10–15% to match. M3
+  (overconvergent modular symbols, ~700 lines) is the bottleneck.
+- 2026-09-13 — **Spec defect caught in W4p1 (orchestrator review).** MST
+  p-adic heights depend on the p-adic E2(E, ω); a wrong E2 shifts h_p by
+  c·log_E(P)² — still quadratic, so the bilinearity acceptance could never
+  detect it and every 𝔅_p would be silently wrong. Split into W4p1a (padic +
+  Kedlaya Frobenius + E2, gated by charpoly = x² − a_p x + p and the Serre
+  congruence E_{p+1} ≡ E_2 mod p) and W4p1b (heights). Wave W4p1a + W4p2
+  dispatched to GLM-5.2.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
   cap (third attempt produced 276 of ~280 lines before dying); two-failure
   rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:
