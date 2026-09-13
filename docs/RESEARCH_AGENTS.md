@@ -72,6 +72,25 @@ with what acceptance. Started 2026-09-13.
 ## 4. Log
 
 - 2026-09-13 — campaign opened. W1a + W1b dispatched to GLM-5.2 workers.
+- 2026-09-13 — **twist bug fixed (orchestrator).** `twists.twist` applied
+  the d-scaling to raw `E.a2/a4/a6` without first passing through
+  `a13_zero_model`: every twist had j = 21952/9 (wrong; 389a1 d=1 came out
+  rank 0!). Root cause of the conductor crashes at d ≡ 1 mod 4 with odd
+  p|d in `_tate_step` (p ≥ 5) also fixed by routing through the global
+  short model y² = x³ − 27c4·x − 54c6 before the star-type step. Verified:
+  N(389a1⊗χ_d) = 389·∏p² for d = 5, −7, 13, −155, 184, −4 + regressions
+  11/37/32/14. Commit 165ac15. Selftest 140/0.
+- 2026-09-13 — **W2b + W3b wave dispatched** (root numbers at additive
+  primes; Darmon/Stark–Heegner spec). Both GLM slots busy. NOTE: wave
+  launched before the twist fix landed — W3b's numbers must be re-verified
+  against the fixed `twists.py` at boundary.
+- 2026-09-13 — **W3a census running** (twist census, 369 fundamental
+  |d| ≤ 200 twists of 389a1/571b1/5077a1; analytic rank + root number
+  each; resumable). Also W5 driver (`certify_scale.py`) and the E4 task
+  ladder staged: W4p1 (padic + MST p-heights) → W4p2 (exact rational
+  modular symbols) → W4p3 (MTT p-adic L). E4 driver
+  (`scratch/e4_beta_table.py`) written against the W4 specs — the
+  𝔅_p = L_p^(r)/(r!·E_p·Reg_p) table testing GRS 𝔅_p = 1.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
   cap (third attempt produced 276 of ~280 lines before dying); two-failure
   rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:
