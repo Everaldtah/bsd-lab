@@ -133,6 +133,32 @@ with what acceptance. Started 2026-09-13.
   the Euler factor (1−1/α)² from the interpolation check. v2 follows
   Stein–Wuthrich 2013 §3 and gates on theorems: distribution relation,
   trivial- and quadratic-character interpolation.
+- 2026-09-13 — **W4 p-adic ladder complete, externally anchored.** GLM-5.2 hit
+  quota twice and the TPU fallback tunnel is down, so the orchestrator
+  finished the ladder. Every stage is checked against published Sage/MAGMA
+  doctest values, not just internal consistency:
+  - `bsdlab/frobenius.py` (Kedlaya Frobenius + Katz E2; worker died twice).
+    Charpoly = x² − a_p x + p on 6 curves × 6 primes. E2(37a1, 5) equals
+    Sage/MAGMA to **5^20**. Katz congruence E_{p+1} ≡ E2·E_{p−1} mod p holds.
+    (A first version of that gate omitted the Hasse invariant E_{p−1} and
+    wrongly failed 20 correct values.)
+  - `bsdlab/padicl.py` (MTT p-adic L). The worker draft had four defects, all
+    fixed. The serious one: `unit_root` used a_p − D for the other square
+    root, giving a wrong α for about half of all (E, p), with
+    sign-alternating Riemann sums for 389a1 at p = 5. Also a PNum addition
+    that dropped a summand, [a/p^(n+1)] in place of [a/p^(n−1)], and w1 in
+    place of the Néron period. Now matches Sage's L_5(389a, T) digit for
+    digit (series(2) and series(3)) and Sage's 37a measure to 5^9, and
+    satisfies MTT interpolation for 11a1 at p = 7, 13.
+  - `bsdlab/pheights.py` (MST heights). h_5(37a1) and **Reg_5(5077a1)**
+    (rank 3, anomalous) equal Sage to 5^10 on the first run. Side finding:
+    the commonly quoted 5077a1 points (−3,0), (−2,3), (−1,3) span an
+    index-2 sublattice (classical regulator 4×); a true basis is
+    (0,−3), (−1,−4), (1,−1).
+- 2026-09-13 — **E4 pilot:** 𝔅_p = 1 for 37a1 (p = 5, 7 mod p^4; p = 11 mod
+  11^3) and 389a1 (mod 5^4, 7^3, 11^2, 13). As expected, this reproduces
+  Stein–Wuthrich 2013, now from an independent Sage-free implementation.
+  The full runs (p ≤ 60; 5077a1 p ≤ 40) write `data/e4_beta_table*.json`.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
   cap (third attempt produced 276 of ~280 lines before dying); two-failure
   rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:
