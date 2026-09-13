@@ -1,0 +1,248 @@
+[
+ {
+  "label": "11a1",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "3.97349e-76",
+   "l_round": "1.85412e-50",
+   "omega_agm": "1.26921e-78",
+   "omega_round": "8.40642e-52",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "11a2",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "3.97349e-76",
+   "l_round": "1.85412e-50",
+   "omega_agm": "2.53842e-79",
+   "omega_round": "1.50451e-51",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "11a3",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "3.97349e-76",
+   "l_round": "1.85412e-50",
+   "omega_agm": "6.34605e-78",
+   "omega_round": "2.25244e-50",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "14a1",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "5.26938e-76",
+   "l_round": "4.48961e-51",
+   "omega_agm": "1.98134e-78",
+   "omega_round": "1.31538e-50",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "15a1",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "5.69774e-76",
+   "l_round": "2.17959e-50",
+   "omega_agm": "2.80121e-78",
+   "omega_round": "1.4001e-50",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "32a3",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "2.4731e-74",
+   "l_round": "4.15325e-50",
+   "omega_agm": "2.62206e-78",
+   "omega_round": "5.76416e-51",
+   "regulator": "0.0"
+  },
+  "notes": [
+   "root number unavailable: NotImplementedError('local root number at additive p=2 (v_p(N)=5): additive reduction at 2 or 3 is not implemented; use root_number_numeric')"
+  ]
+ },
+ {
+  "label": "37a1",
+  "rank": 1,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "1.09575e-73",
+   "l_round": "8.36728e-51",
+   "omega_agm": "5.98692e-78",
+   "omega_round": "4.15648e-50",
+   "regulator": "3.57969e-62"
+  },
+  "notes": []
+ },
+ {
+  "label": "37b1",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "1.06053e-73",
+   "l_round": "5.00755e-50",
+   "omega_agm": "2.17704e-78",
+   "omega_round": "1.65882e-50",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "389a1",
+  "rank": 2,
+  "rank_certified": false,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "4.04632e-41",
+   "l_round": "2.31454e-49",
+   "omega_agm": "4.98043e-78",
+   "omega_round": "1.41314e-50",
+   "regulator": "8.82092e-62"
+  },
+  "notes": [
+   "rank not certified: analytic rank >= 2, Sha finiteness open"
+  ]
+ },
+ {
+  "label": "571a1",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "4.0",
+  "hi": "4.0",
+  "sha_certified": 4,
+  "sha_ref": 4,
+  "budget": {
+   "l_tail": "1.17035e-38",
+   "l_round": "5.97107e-51",
+   "omega_agm": "4.32341e-79",
+   "omega_round": "1.28899e-51",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "571b1",
+  "rank": 2,
+  "rank_certified": false,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "1.2246e-38",
+   "l_round": "3.32797e-50",
+   "omega_agm": "5.09531e-78",
+   "omega_round": "4.48808e-50",
+   "regulator": "1.04663e-61"
+  },
+  "notes": [
+   "rank not certified: analytic rank >= 2, Sha finiteness open"
+  ]
+ },
+ {
+  "label": "681a1",
+  "rank": 1,
+  "rank_certified": true,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "1.40544e-38",
+   "l_round": "4.76783e-47",
+   "omega_agm": "3.80788e-78",
+   "omega_round": "2.17962e-50",
+   "regulator": "7.83326e-61"
+  },
+  "notes": []
+ },
+ {
+  "label": "681b1",
+  "rank": 0,
+  "rank_certified": true,
+  "lo": "9.0",
+  "hi": "9.0",
+  "sha_certified": 9,
+  "sha_ref": 9,
+  "budget": {
+   "l_tail": "1.38946e-38",
+   "l_round": "8.82892e-50",
+   "omega_agm": "8.19918e-79",
+   "omega_round": "5.87048e-52",
+   "regulator": "0.0"
+  },
+  "notes": []
+ },
+ {
+  "label": "5077a1",
+  "rank": 3,
+  "rank_certified": false,
+  "lo": "1.0",
+  "hi": "1.0",
+  "sha_certified": 1,
+  "sha_ref": 1,
+  "budget": {
+   "l_tail": "1.44477e-31",
+   "l_round": "8.40416e-50",
+   "omega_agm": "4.15169e-78",
+   "omega_round": "1.26944e-50",
+   "regulator": "1.23035e-60"
+  },
+  "notes": [
+   "rank not certified: analytic rank >= 2, Sha finiteness open"
+  ]
+ }
+]

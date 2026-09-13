@@ -53,6 +53,39 @@ The tolerance is 1e-6 (`bsd.SHA_INTEGRALITY_TOLERANCE`). The worst curve clears
 it by 28 orders of magnitude. Accuracy degrades with rank, as expected: the
 regulator is the least precise input, and it enters only for rank >= 1.
 
+## Interval certificates (`bsdlab.certify`, 2026-09-13)
+
+The 1e-6 heuristic is now backed by a rigorous error budget: an explicit
+L-series truncation tail (Hasse |a_n| <= 2 sqrt(n), summed geometrically), the
+AGM last-iterate gap for Omega (the AGM limit provably lies between the final
+iterates), and dps-50/80 two-precision differencing times 10 for the regulator
+and general rounding — an engineering proxy, honestly labelled as such. The
+quotient becomes an interval; when it lies strictly inside (n - 1/2, n + 1/2),
+`#Sha = n` is certified conditional on strong BSD (and on the algebraic rank,
+Gross–Zagier + Kolyvagin for rank <= 1). All 14 reference curves certify,
+worst relative half-width 8e-32 (5077a1, dominated by its e^{-71.7} L-tail —
+the budget widens with N exactly as the analysis says it must).
+
+Two things surfaced while building it:
+
+- **`lseries.analytic_rank` misranks large-N curves at high precision.** The
+  truncation tail is precision-independent (it depends on N, not dps), but the
+  zero-test threshold is 10^(-prec/2). At prec 80 on 571b1 the tail is 3e-39
+  and the threshold 1e-40, so the scan reports rank 0 for a rank-2 curve;
+  5077a1 likewise reports 1 for 3. `certify.analytic_rank_bounded` replaces
+  the threshold with the analytic tail itself; the default prec-60 pipeline is
+  unaffected. Raising `prec` without raising `TERMS_PER_SQRT_N` is unsafe —
+  the module docstring already warns of this.
+- **`data/lmfdb_reference.json` real_period strings disagree with the
+  computation from digit ~18 on some rows.** 11a1: the file says
+  1.26920930427955342602495318, but Omega(11a1) = 1.269209304279553421688794616754...
+  (verified two ways: hand AGM and `mpmath.ellipk`, agreeing to 37 digits; and
+  L(E,1) = Omega/5 = 0.25384186085591068433775892335... matches the literature).
+  The 37a1/389a1/571a1/681b1/5077a1 rows are full precision, so the corruption
+  is per-row, not systematic — likely a float round-trip in `tools/fetch_lmfdb.py`.
+  Integer fields (sha, ranks) are unaffected. The oracle comparisons in run.py
+  should not trust the real_period strings past ~17 digits.
+
 ## The two curves that matter most
 
 571a1 (#Sha = 4) and 681b1 (#Sha = 9) are the load-bearing tests. On every other
