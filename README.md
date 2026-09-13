@@ -60,6 +60,14 @@ where rank ≥ 2 breaks every known method — including why the computational b
 and the theoretical one are the same barrier. Written so the open boundary is a
 list of concrete statements, not a vibe.
 
+**4. `docs/research/` — new directions.** Five research notes proposing
+strategies aimed at the open cases (uniformity in `p` via a Global Rational
+Shadow, realization-independent generating series, Kolyvagin
+anti-concentration, geodesic barycenters as archimedean "legs", and a volume
+form of the exact formula), plus a graveyard of killed ideas and falsification
+experiments. Proposals, not proofs — start at
+[`docs/research/README.md`](docs/research/README.md).
+
 ## Status
 
 Working pipeline. The 12-curve self-test passes (100 checks, 0 failures) and the

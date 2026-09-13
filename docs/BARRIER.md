@@ -112,6 +112,14 @@ Not one example. Finiteness of `Sha` is known exactly where Kolyvagin's argument
 runs, which is exactly analytic rank <= 1. For `389a1` — the smallest conductor
 with rank 2 — the finiteness of `Sha` is open.
 
+> **Update (2026-09-13).** Per-prime rank-2 results now exist. Castella–Hsieh
+> (Forum Math. Sigma 2022) show that a nonzero generalised Kato class gives a
+> 2-dimensional `p`-adic Selmer group. Castella (arXiv:2204.09608) treats CM
+> curves. arXiv:2609.08431 gives a unit criterion for `Sha[p^∞] = 0` via
+> `L_p''` for rank-2 CM curves, outside an explicit set of primes. What
+> remains open is `Sha[p] = 0` for **all but finitely many** `p` at once. See
+> [`research/01_global_rational_shadow.md`](research/01_global_rational_shadow.md).
+
 ### 3.5 The algorithmic gap is the same gap
 
 Descent computes Selmer groups, and for each `n`,
