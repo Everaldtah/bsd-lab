@@ -184,7 +184,9 @@ with what acceptance. Started 2026-09-13.
       previously unresolved primes; `389a1` and `571b1` complete to
       `p ≤ 59`. That is 42/42 cells with `𝔅_p = 1`.
     - Twist census: `389a1` complete (123 twists, rank 0/1/2 = 55/60/8,
-      no parity violations); `571b1` and `5077a1` still running.
+      no parity violations); `571b1` complete (rank 0/1/2 = 46/61/16, no
+      parity violations); `5077a1` 34/123. The run was stopped by the host
+      for low memory. It is resumable with `python scratch/census_w3a.py 200`.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
   cap (third attempt produced 276 of ~280 lines before dying); two-failure
   rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:
