@@ -114,9 +114,11 @@ for Route B. See Note 6 §2.
 
 - `37a1`: all 12 good ordinary `p ≤ 59`. The formerly unresolved
   `p = 13, 47, 53, 59` are now resolved at higher level.
-- `389a1`: all 14 good ordinary `p ≤ 53`.
+- `389a1`: all 15 good ordinary `p ≤ 59`.
+- `571b1`: all 15 good ordinary `p ≤ 59` (first run for this curve).
 - `5077a1`: `p ≤ 17`.
-- `571b1`: run in progress.
+
+That is 42/42 cells for `p ≤ 59` on the three curves of rank ≤ 2.
 
 See `data/e4_beta_table*.json`. This reproduces Stein–Wuthrich 2013. It
 is not new evidence for GRS uniformity (Note 1 §8.1).

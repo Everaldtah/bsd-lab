@@ -181,7 +181,8 @@ with what acceptance. Started 2026-09-13.
     `p`-adic order), MT3 (higher Gross–Zagier over `Q`), MT4 (Route A).
   - **Other runs:**
     - E4 extended: `37a1` complete to `p ≤ 59`, including the 4
-      previously unresolved primes; `389a1` to `p ≤ 53`.
+      previously unresolved primes; `389a1` and `571b1` complete to
+      `p ≤ 59`. That is 42/42 cells with `𝔅_p = 1`.
     - Twist census: `389a1` complete (123 twists, rank 0/1/2 = 55/60/8,
       no parity violations); `571b1` and `5077a1` still running.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
