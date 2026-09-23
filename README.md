@@ -68,6 +68,18 @@ form of the exact formula), plus a graveyard of killed ideas and falsification
 experiments. Proposals, not proofs — start at
 [`docs/research/README.md`](docs/research/README.md).
 
+## The general case
+
+[`docs/GENERAL_SOLUTION_PLAN.md`](docs/GENERAL_SOLUTION_PLAN.md) reduces full
+BSD to four named missing theorems (MT1–MT4) and ranks what can be done
+toward each. [`docs/research/06_route_b_exhaustive.md`](docs/research/06_route_b_exhaustive.md)
+tests every known rank-2 mechanism.
+
+- A proved no-go lemma, confirmed numerically on 43 of 43 Heegner points,
+  rules out every point construction.
+- The surviving machinery works one prime at a time.
+- BSD is still open.
+
 ## Status
 
 Working pipeline. The 12-curve self-test passes (100 checks, 0 failures) and the

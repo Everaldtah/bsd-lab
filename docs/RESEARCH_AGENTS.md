@@ -159,6 +159,31 @@ with what acceptance. Started 2026-09-13.
   11^3) and 389a1 (mod 5^4, 7^3, 11^2, 13). As expected, this reproduces
   Stein–Wuthrich 2013, now from an independent Sage-free implementation.
   The full runs (p ≤ 60; 5077a1 p ≤ 40) write `data/e4_beta_table*.json`.
+- 2026-09-23 — **Route B exhaustive pass (orchestrator)**
+  → `docs/research/06_route_b_exhaustive.md` + `docs/GENERAL_SOLUTION_PLAN.md`.
+  - **First-Derivative No-Go Lemma** proved: any construction with a
+    `⟨c,c⟩ ∝ L'(E/K,χ,1)` height formula contributes nothing to `E(Q)`
+    once `ord L ≥ 2`.
+  - **RB1** (`tests_research/rb1_heegner_no_go.py`): Heegner points are
+    torsion on 21/21 discriminants for `389a1` and 22/22 for `5077a1`.
+    This reproduces the Buhler–Gross–Zagier 1985 mechanism Sage-free.
+    Control `37a1`: `L_alg(E^D,1) = 2k²` exactly on 22/22 (Gross–Zagier).
+    A ramified `D = −111` leaked through the first filter and was caught by
+    the `2k²` law.
+  - **Verdicts:**
+    - Heegner/twists: killed.
+    - Stark–Heegner/Darmon: killed by the same lemma. W3b's M3 stage is
+      cancelled.
+    - Beilinson–Flach: dormant.
+    - Kolyvagin systems, generalised Kato / diagonal classes, derived
+      heights: alive, per prime.
+  - **Remaining content:** MT1 (uniformity in `p`), MT2 (complex ↔
+    `p`-adic order), MT3 (higher Gross–Zagier over `Q`), MT4 (Route A).
+  - **Other runs:**
+    - E4 extended: `37a1` complete to `p ≤ 59`, including the 4
+      previously unresolved primes; `389a1` to `p ≤ 53`.
+    - Twist census: `389a1` complete (123 twists, rank 0/1/2 = 55/60/8,
+      no parity violations); `571b1` and `5077a1` still running.
 - 2026-09-13 — **W1a landed.** Worker died twice on the 8192-token output
   cap (third attempt produced 276 of ~280 lines before dying); two-failure
   rule fired, orchestrator finished and certified it. Acceptance 7/7 PASS:

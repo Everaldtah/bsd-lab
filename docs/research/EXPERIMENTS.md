@@ -1,6 +1,6 @@
 # Falsification experiments for the research notes
 
-These are specifications only; nothing here has been run. Every experiment
+Specifications, plus results where an experiment has been run (RB1, E4). Every experiment
 uses the lab's reference curves (`389a1`, `571b1`, rank 2; `5077a1`, rank 3;
 `37a1`, rank 1) and reports certified error bars in the sense of PLAN.md L1.
 The priority column orders them by kill value per unit of work.
@@ -87,3 +87,36 @@ and the `3 × 3` regulator `Reg_p`.
   `L^(r)(E,1)/r!`, for `x ≤ 10^5`, on `389a1`, `571b1` and `5077a1`.
 - **Deliverable.** A convergence profile plus a rigidity map. This is a
   diagnostic, not a kill test.
+
+## RB1 — First-derivative no-go (Note 6) — **RUN, 2026-09-23**
+
+- **Driver:** `tests_research/rb1_heegner_no_go.py`.
+- **Data:** `data/rb1_heegner.json`.
+- **Method:** Heegner points `y_K` for every fundamental `D`,
+  `|D| ≤ 160`, satisfying the Heegner hypothesis, via `φ(τ) = Σ a_n/n qⁿ`
+  mod the lab's Néron lattice, at 30 digits.
+
+**Results.**
+
+- `389a1`: 21/21 torsion.
+- `5077a1`: 22/22 torsion.
+- Control `37a1`: 18 non-torsion points, each exactly `k·P`, and 4 torsion
+  points.
+- On all 22 control discriminants, the exact modular-symbol value satisfies
+  `L_alg(E^D,1) = 2k²`. This is Gross–Zagier with zero error.
+
+**Verdict.** The lemma holds as predicted. Point constructions are dead
+for Route B. See Note 6 §2.
+
+## E4 status (2026-09-23)
+
+`𝔅_p = 1` at every resolved good ordinary prime, with no failures:
+
+- `37a1`: all 12 good ordinary `p ≤ 59`. The formerly unresolved
+  `p = 13, 47, 53, 59` are now resolved at higher level.
+- `389a1`: all 14 good ordinary `p ≤ 53`.
+- `5077a1`: `p ≤ 17`.
+- `571b1`: run in progress.
+
+See `data/e4_beta_table*.json`. This reproduces Stein–Wuthrich 2013. It
+is not new evidence for GRS uniformity (Note 1 §8.1).

@@ -1,0 +1,101 @@
+{
+ "status": "PARTIAL snapshot of the W3a twist census (scratch/census_w3a.py 200); resumable, final file will be data/twist_census.json",
+ "snapshot": "2026-09-23",
+ "curves": {
+  "389a1": {
+   "done": 123,
+   "of": 123,
+   "rank_distribution": {
+    "2": 8,
+    "0": 55,
+    "1": 60
+   },
+   "root_number_split": {
+    "+": 63,
+    "-": 60
+   },
+   "rank_ge_2_twists": [
+    {
+     "d": 1,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": -47,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": 65,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": 93,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": -103,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": -107,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": 141,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": 184,
+     "w": 1,
+     "rank": 2
+    }
+   ],
+   "parity_violations": []
+  },
+  "571b1": {
+   "done": 37,
+   "of": 123,
+   "rank_distribution": {
+    "2": 3,
+    "1": 17,
+    "0": 17
+   },
+   "root_number_split": {
+    "+": 20,
+    "-": 17
+   },
+   "rank_ge_2_twists": [
+    {
+     "d": 1,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": 29,
+     "w": 1,
+     "rank": 2
+    },
+    {
+     "d": 44,
+     "w": 1,
+     "rank": 2
+    }
+   ],
+   "parity_violations": []
+  },
+  "5077a1": {
+   "done": 0,
+   "of": 123,
+   "rank_distribution": {},
+   "root_number_split": {},
+   "rank_ge_2_twists": [],
+   "parity_violations": []
+  }
+ }
+}
